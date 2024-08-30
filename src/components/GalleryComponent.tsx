@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import Slider from 'react-slick';
 import { Button } from '@/components/ui/button';
 import { Maximize2 } from 'lucide-react';
-import { GalleryImage } from '@/data-access/gallery';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { GalleryImage } from '@/db/schema';
 
 interface GalleryComponentProps {
 	images: GalleryImage[];

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Member } from '@/data-access/members';
 import { Button } from './ui/button';
+import { Member } from '@/db/schema';
 
 const ITEMS_PER_PAGE = 8;
 const GRID_ROWS = 2;

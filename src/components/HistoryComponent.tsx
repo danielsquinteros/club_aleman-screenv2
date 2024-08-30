@@ -1,6 +1,6 @@
+import { HistoryEvent } from '@/db/schema';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { HistoryEvent } from '@/data-access/history';
 
 interface HistoryComponentProps {
 	events: HistoryEvent[];
