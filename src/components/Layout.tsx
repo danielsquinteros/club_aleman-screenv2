@@ -3,7 +3,8 @@ import Header from './Header';
 import Footer from './Footer';
 
 const Layout = () => (
-	<div className='flex flex-col min-h-screen bg-white text-black p-8 w-screen'>
+	// make the layout full height but consider the padding
+	<div className='flex flex-col min-h-screen bg-white text-black p-8'>
 		<Header />
 		<main className='flex-grow flex flex-col justify-center'>
 			<Outlet />

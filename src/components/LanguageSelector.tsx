@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from './ui/button';
+import { cn } from '@/lib/utils';
 
 const LanguageSelector = () => {
 	const { i18n } = useTranslation();
@@ -16,11 +17,12 @@ const LanguageSelector = () => {
 				<Button
 					key={lang}
 					onClick={() => changeLanguage(lang)}
-					className={`p-0 ${
+					className={cn(
+						`p-0 cursor-pointer`,
 						i18n.language === lang
 							? 'border-2 border-black'
-							: 'hover:bg-gray-100'
-					}`}
+							: 'hover:bg-gray-100',
+					)}
 					asChild
 				>
 					<img

@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { members } from '@/data/members';
 
 const ITEMS_PER_PAGE = 8;
+const GRID_ROWS = 2;
 
 const DirectorsList = () => {
 	const { t } = useTranslation();
@@ -16,6 +17,13 @@ const DirectorsList = () => {
 		currentPage * ITEMS_PER_PAGE,
 	);
 
+	// Fill the remaining slots with empty items
+	const emptySlots = ITEMS_PER_PAGE - paginatedDirectors.length;
+	const filledDirectors = [
+		...paginatedDirectors,
+		...Array(emptySlots).fill(null),
+	];
+
 	const handlePageChange = (page: number) => {
 		setCurrentPage(page);
 	};
@@ -26,20 +34,32 @@ const DirectorsList = () => {
 
 	return (
 		<div className='flex flex-col justify-between h-full'>
-			<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto'>
-				{paginatedDirectors.map((director) => (
-					<div key={director.id} className='flex flex-col items-center'>
-						<img
-							src={director.avatarUrl || getAvatarUrl(director.id)}
-							alt={`${director.firstName} ${director.lastName}`}
-							className='w-32 h-32 rounded-full mb-4 object-cover border-4 border-gray-200'
-						/>
-						<h2 className='text-2xl font-bold text-center'>
-							{`${director.firstName} ${director.lastName}`}
-						</h2>
-						<p className='text-xl text-gray-600 text-center'>
-							{t(`roles.${director.role}`)}
-						</p>
+			<div
+				className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto'
+				style={{ gridTemplateRows: `repeat(${GRID_ROWS}, minmax(0, 1fr))` }}
+			>
+				{filledDirectors.map((director, index) => (
+					<div
+						key={director?.id || `empty-${index}`}
+						className='flex flex-col items-center'
+					>
+						{director ? (
+							<>
+								<img
+									src={director.avatarUrl || getAvatarUrl(director.id)}
+									alt={`${director.firstName} ${director.lastName}`}
+									className='w-32 h-32 rounded-full mb-4 object-cover border-4 border-gray-200'
+								/>
+								<h2 className='text-2xl font-bold text-center'>
+									{`${director.firstName} ${director.lastName}`}
+								</h2>
+								<p className='text-xl text-gray-600 text-center'>
+									{t(`roles.${director.role}`)}
+								</p>
+							</>
+						) : (
+							<div className='w-32 h-32 rounded-full mb-4'></div>
+						)}
 					</div>
 				))}
 			</div>

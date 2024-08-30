@@ -8,7 +8,7 @@ const Header = () => {
 	const dateLocale = getDateLocale(i18n.language);
 
 	return (
-		<header className='flex justify-between items-start mb-8'>
+		<header className='flex justify-between items-start'>
 			<div>
 				<h2 className='text-4xl font-bold first-letter:uppercase'>
 					{format(new Date(), 'EEEE dd', { locale: dateLocale })}

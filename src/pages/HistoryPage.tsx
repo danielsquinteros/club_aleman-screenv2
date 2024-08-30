@@ -14,7 +14,7 @@ const HistoryPage = () => {
 
 	return (
 		<div className='flex-grow max-w-4xl mx-auto px-4'>
-			<h1 className='text-6xl font-bold mb-12 text-center'>{t('history')}</h1>
+			<h1 className='text-6xl font-bold mb-10 text-center'>{t('history')}</h1>
 			<div className='space-y-12'>
 				{historyEvents.map((item, index) => (
 					<div key={index} className='flex items-center'>

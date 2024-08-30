@@ -51,7 +51,7 @@ const GalleryPage = () => {
 
 	return (
 		<div className='flex-grow'>
-			<h1 className='text-6xl font-bold mb-12 text-center'>{t('gallery')}</h1>
+			<h1 className='text-6xl font-bold mb-10 text-center'>{t('gallery')}</h1>
 			<div className='max-w-4xl mx-auto relative'>
 				<Slider
 					asNavFor={nav2 ?? undefined}
