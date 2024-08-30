@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { members, Member } from '@/data/members';
+import { Member } from '@/data-access/members';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -31,14 +31,17 @@ import {
 	FormLabel,
 	FormMessage,
 } from '@/components/ui/form';
-import { Label } from './ui/label';
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const ITEMS_PER_PAGE = 6;
 const TOTAL_ROWS = 6;
 const SECRET_PASSWORD = 'facil';
 
-const MembersTable = () => {
+interface MembersTableProps {
+	members: Member[];
+}
+
+const MembersTable: React.FC<MembersTableProps> = ({ members }) => {
 	const { t } = useTranslation();
 	const [filter, setFilter] = useState<string | null>(null);
 	const [currentPage, setCurrentPage] = useState(1);
@@ -58,13 +61,11 @@ const MembersTable = () => {
 		},
 	});
 
-	const membersList = members.getMembers();
-
 	const filteredMembers = filter
-		? membersList.filter((member) =>
+		? members.filter((member) =>
 				member.lastName.toUpperCase().startsWith(filter),
 		  )
-		: membersList;
+		: members;
 
 	const totalPages = Math.ceil(filteredMembers.length / ITEMS_PER_PAGE);
 	const paginatedMembers = filteredMembers.slice(

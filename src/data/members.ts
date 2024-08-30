@@ -1,34 +1,13 @@
-export type Member = {
-	id: string;
-	firstName: string;
-	lastName: string;
-	secondSurname?: string;
-	role:
-		| 'president'
-		| 'vice_president'
-		| 'secretary'
-		| 'treasurer'
-		| 'board_member'
-		| 'honor_advisor'
-		| 'honor_member'
-		| 'member';
-	email?: string;
-	phoneNumber?: string;
-	address?: string;
-	country?: string;
-	city?: string;
-	avatarUrl?: string;
-	joinDate: string; // Add this line
-};
+import { Member } from '@/db/schema';
 
-const membersList: Member[] = [
+export const membersList: Member[] = [
 	{
 		id: '1',
 		firstName: 'Jorge',
 		lastName: 'Marchant',
 		secondSurname: 'Brahm',
 		role: 'president',
-		joinDate: '1990-05-15', // Add a join date for each member
+		joinDate: '1990-05-15',
 	},
 	{
 		id: '2',
@@ -36,7 +15,7 @@ const membersList: Member[] = [
 		lastName: 'Meyer',
 		secondSurname: 'Guerrero',
 		role: 'vice_president',
-		joinDate: '1992-03-20', // Add a join date for each member
+		joinDate: '1992-03-20',
 	},
 	{
 		id: '3',
@@ -44,7 +23,7 @@ const membersList: Member[] = [
 		lastName: 'Brintrup',
 		secondSurname: 'Bonvallet',
 		role: 'secretary',
-		joinDate: '1995-07-10', // Add a join date for each member
+		joinDate: '1995-07-10',
 	},
 	{
 		id: '4',
@@ -52,7 +31,7 @@ const membersList: Member[] = [
 		lastName: 'Brahm',
 		secondSurname: 'Rosas',
 		role: 'treasurer',
-		joinDate: '1998-11-05', // Add a join date for each member
+		joinDate: '1998-11-05',
 	},
 	{
 		id: '5',
@@ -60,7 +39,7 @@ const membersList: Member[] = [
 		lastName: 'Marchant',
 		secondSurname: 'Brahm',
 		role: 'board_member',
-		joinDate: '2001-02-15', // Add a join date for each member
+		joinDate: '2001-02-15',
 	},
 	{
 		id: '6',
@@ -68,7 +47,7 @@ const membersList: Member[] = [
 		lastName: 'Wahl',
 		secondSurname: 'Böhme',
 		role: 'board_member',
-		joinDate: '2003-09-25', // Add a join date for each member
+		joinDate: '2003-09-25',
 	},
 	{
 		id: '7',
@@ -76,7 +55,7 @@ const membersList: Member[] = [
 		lastName: 'Oyarzun ',
 		secondSurname: 'Scholtbach',
 		role: 'board_member',
-		joinDate: '2006-04-12', // Add a join date for each member
+		joinDate: '2006-04-12',
 	},
 	{
 		id: '8',
@@ -84,7 +63,7 @@ const membersList: Member[] = [
 		lastName: 'Weitzler',
 		secondSurname: 'Zarges',
 		role: 'honor_advisor',
-		joinDate: '2009-10-08', // Add a join date for each member
+		joinDate: '2009-10-08',
 	},
 	{
 		id: '9',
@@ -92,7 +71,7 @@ const membersList: Member[] = [
 		lastName: 'Scholtbach  ',
 		secondSurname: 'Zarges',
 		role: 'honor_member',
-		joinDate: '2012-06-22', // Add a join date for each member
+		joinDate: '2012-06-22',
 	},
 	{
 		id: '10',
@@ -100,7 +79,7 @@ const membersList: Member[] = [
 		lastName: 'Stange',
 		secondSurname: 'Oelckers',
 		role: 'honor_member',
-		joinDate: '2015-03-18', // Add a join date for each member
+		joinDate: '2015-03-18',
 	},
 	{
 		id: '11',
@@ -108,7 +87,7 @@ const membersList: Member[] = [
 		lastName: 'Ercoreca',
 		secondSurname: 'von Bischoffshausen',
 		role: 'honor_member',
-		joinDate: '2018-09-05', // Add a join date for each member
+		joinDate: '2018-09-05',
 	},
 	{
 		id: '12',
@@ -116,7 +95,7 @@ const membersList: Member[] = [
 		lastName: 'Oelckers',
 		secondSurname: 'Sepulveda',
 		role: 'honor_member',
-		joinDate: '2021-01-10', // Add a join date for each member
+		joinDate: '2021-01-10',
 	},
 	{
 		id: '13',
@@ -124,7 +103,7 @@ const membersList: Member[] = [
 		lastName: 'Alvarado',
 		secondSurname: 'Figueroa',
 		role: 'member',
-		joinDate: '2022-07-03', // Add a join date for each member
+		joinDate: '2022-07-03',
 	},
 	{
 		id: '14',
@@ -132,7 +111,7 @@ const membersList: Member[] = [
 		lastName: 'Alvarado',
 		secondSurname: 'Hermosilla',
 		role: 'member',
-		joinDate: '2023-02-15', // Add a join date for each member
+		joinDate: '2023-02-15',
 	},
 	{
 		id: '15',
@@ -140,7 +119,7 @@ const membersList: Member[] = [
 		lastName: 'Bartsch',
 		secondSurname: 'Lohrmann',
 		role: 'member',
-		joinDate: '2023-08-20', // Add a join date for each member
+		joinDate: '2023-08-20',
 	},
 	{
 		id: '16',
@@ -148,7 +127,7 @@ const membersList: Member[] = [
 		lastName: 'Bartsch',
 		secondSurname: 'Lohrmann',
 		role: 'member',
-		joinDate: '2023-10-05', // Add a join date for each member
+		joinDate: '2023-10-05',
 	},
 	{
 		id: '17',
@@ -156,7 +135,7 @@ const membersList: Member[] = [
 		lastName: 'Berndt',
 		secondSurname: 'Schuhmacher',
 		role: 'member',
-		joinDate: '2023-11-12', // Add a join date for each member
+		joinDate: '2023-11-12',
 	},
 	{
 		id: '18',
@@ -164,7 +143,7 @@ const membersList: Member[] = [
 		lastName: 'Berndt',
 		secondSurname: 'Sole',
 		role: 'member',
-		joinDate: '2023-12-02', // Add a join date for each member
+		joinDate: '2023-12-02',
 	},
 	{
 		id: '19',
@@ -172,7 +151,7 @@ const membersList: Member[] = [
 		lastName: 'Berndt',
 		secondSurname: 'Sole',
 		role: 'member',
-		joinDate: '2023-12-10', // Add a join date for each member
+		joinDate: '2023-12-10',
 	},
 	{
 		id: '20',
@@ -180,7 +159,7 @@ const membersList: Member[] = [
 		lastName: 'Berndt',
 		secondSurname: 'Sole',
 		role: 'member',
-		joinDate: '2023-12-18', // Add a join date for each member
+		joinDate: '2023-12-18',
 	},
 	{
 		id: '21',
@@ -188,7 +167,7 @@ const membersList: Member[] = [
 		lastName: 'Brahm',
 		secondSurname: 'Navarrete',
 		role: 'member',
-		joinDate: '2023-12-25', // Add a join date for each member
+		joinDate: '2023-12-25',
 	},
 	{
 		id: '22',
@@ -196,7 +175,7 @@ const membersList: Member[] = [
 		lastName: 'Brintrup',
 		secondSurname: 'Bonvallet',
 		role: 'member',
-		joinDate: '2023-12-30', // Add a join date for each member
+		joinDate: '2023-12-30',
 	},
 	{
 		id: '23',
@@ -204,7 +183,7 @@ const membersList: Member[] = [
 		lastName: 'Brintrup',
 		secondSurname: 'Bonvallet',
 		role: 'member',
-		joinDate: '2024-01-05', // Add a join date for each member
+		joinDate: '2024-01-05',
 	},
 	{
 		id: '24',
@@ -212,7 +191,7 @@ const membersList: Member[] = [
 		lastName: 'Cardenas ',
 		secondSurname: 'Elgueta',
 		role: 'member',
-		joinDate: '2024-01-10', // Add a join date for each member
+		joinDate: '2024-01-10',
 	},
 	{
 		id: '25',
@@ -220,7 +199,7 @@ const membersList: Member[] = [
 		lastName: 'Cardenas ',
 		secondSurname: 'Elgueta',
 		role: 'member',
-		joinDate: '2024-01-15', // Add a join date for each member
+		joinDate: '2024-01-15',
 	},
 	{
 		id: '26',
@@ -228,7 +207,7 @@ const membersList: Member[] = [
 		lastName: 'Cardenas ',
 		secondSurname: 'Elgueta',
 		role: 'member',
-		joinDate: '2024-01-20', // Add a join date for each member
+		joinDate: '2024-01-20',
 	},
 	{
 		id: '27',
@@ -236,7 +215,7 @@ const membersList: Member[] = [
 		lastName: 'Cardenas ',
 		secondSurname: 'Elgueta',
 		role: 'member',
-		joinDate: '2024-01-25', // Add a join date for each member
+		joinDate: '2024-01-25',
 	},
 	{
 		id: '28',
@@ -244,7 +223,7 @@ const membersList: Member[] = [
 		lastName: 'Cardenas ',
 		secondSurname: 'Garcia',
 		role: 'member',
-		joinDate: '2024-01-30', // Add a join date for each member
+		joinDate: '2024-01-30',
 	},
 	{
 		id: '29',
@@ -252,7 +231,7 @@ const membersList: Member[] = [
 		lastName: 'Correa',
 		secondSurname: 'Bohle',
 		role: 'member',
-		joinDate: '2024-02-05', // Add a join date for each member
+		joinDate: '2024-02-05',
 	},
 	{
 		id: '30',
@@ -260,7 +239,7 @@ const membersList: Member[] = [
 		lastName: 'De Solminihac',
 		secondSurname: 'Oelckers',
 		role: 'member',
-		joinDate: '2024-02-10', // Add a join date for each member
+		joinDate: '2024-02-10',
 	},
 	{
 		id: '31',
@@ -268,7 +247,7 @@ const membersList: Member[] = [
 		lastName: 'Ercoreca',
 		secondSurname: 'Negron',
 		role: 'member',
-		joinDate: '2024-02-15', // Add a join date for each member
+		joinDate: '2024-02-15',
 	},
 	{
 		id: '32',
@@ -276,7 +255,7 @@ const membersList: Member[] = [
 		lastName: 'Fiebig',
 		secondSurname: 'Müller',
 		role: 'member',
-		joinDate: '2024-02-20', // Add a join date for each member
+		joinDate: '2024-02-20',
 	},
 	{
 		id: '33',
@@ -284,7 +263,7 @@ const membersList: Member[] = [
 		lastName: 'Frene',
 		secondSurname: 'Dietz',
 		role: 'member',
-		joinDate: '2024-02-25', // Add a join date for each member
+		joinDate: '2024-02-25',
 	},
 	{
 		id: '34',
@@ -292,7 +271,7 @@ const membersList: Member[] = [
 		lastName: 'Fuchslocher',
 		secondSurname: 'Marquez',
 		role: 'member',
-		joinDate: '2024-03-01', // Add a join date for each member
+		joinDate: '2024-03-01',
 	},
 	{
 		id: '35',
@@ -300,7 +279,7 @@ const membersList: Member[] = [
 		lastName: 'Fuchslocher ',
 		secondSurname: 'Raddatz',
 		role: 'member',
-		joinDate: '2024-03-05', // Add a join date for each member
+		joinDate: '2024-03-05',
 	},
 	{
 		id: '36',
@@ -308,7 +287,7 @@ const membersList: Member[] = [
 		lastName: 'Gallardo',
 		secondSurname: 'Weitzler',
 		role: 'member',
-		joinDate: '2024-03-10', // Add a join date for each member
+		joinDate: '2024-03-10',
 	},
 	{
 		id: '37',
@@ -316,7 +295,7 @@ const membersList: Member[] = [
 		lastName: 'Georg',
 		secondSurname: 'Frese',
 		role: 'member',
-		joinDate: '2024-03-15', // Add a join date for each member
+		joinDate: '2024-03-15',
 	},
 	{
 		id: '38',
@@ -324,7 +303,7 @@ const membersList: Member[] = [
 		lastName: 'Gordon ',
 		secondSurname: 'Agliati',
 		role: 'member',
-		joinDate: '2024-03-20', // Add a join date for each member
+		joinDate: '2024-03-20',
 	},
 	{
 		id: '39',
@@ -332,7 +311,7 @@ const membersList: Member[] = [
 		lastName: 'Guijon ',
 		secondSurname: 'Errazuriz',
 		role: 'member',
-		joinDate: '2024-03-25', // Add a join date for each member
+		joinDate: '2024-03-25',
 	},
 	{
 		id: '40',
@@ -340,7 +319,7 @@ const membersList: Member[] = [
 		lastName: 'Haeger',
 		secondSurname: 'Yunge',
 		role: 'member',
-		joinDate: '2024-04-01', // Add a join date for each member
+		joinDate: '2024-04-01',
 	},
 	{
 		id: '41',
@@ -348,7 +327,7 @@ const membersList: Member[] = [
 		lastName: 'Hamman',
 		secondSurname: 'Henkes',
 		role: 'member',
-		joinDate: '2024-04-05', // Add a join date for each member
+		joinDate: '2024-04-05',
 	},
 	{
 		id: '42',
@@ -356,7 +335,7 @@ const membersList: Member[] = [
 		lastName: 'Heinz',
 		secondSurname: 'Davila',
 		role: 'member',
-		joinDate: '2024-04-10', // Add a join date for each member
+		joinDate: '2024-04-10',
 	},
 	{
 		id: '43',
@@ -364,7 +343,7 @@ const membersList: Member[] = [
 		lastName: 'Herz',
 		secondSurname: 'Barria',
 		role: 'member',
-		joinDate: '2024-04-15', // Add a join date for each member
+		joinDate: '2024-04-15',
 	},
 	{
 		id: '44',
@@ -372,7 +351,7 @@ const membersList: Member[] = [
 		lastName: 'Herz',
 		secondSurname: 'Barria',
 		role: 'member',
-		joinDate: '2024-04-20', // Add a join date for each member
+		joinDate: '2024-04-20',
 	},
 	{
 		id: '45',
@@ -380,7 +359,7 @@ const membersList: Member[] = [
 		lastName: 'Herz',
 		secondSurname: 'Klein',
 		role: 'member',
-		joinDate: '2024-04-25', // Add a join date for each member
+		joinDate: '2024-04-25',
 	},
 	{
 		id: '46',
@@ -388,7 +367,7 @@ const membersList: Member[] = [
 		lastName: 'Hölck',
 		secondSurname: 'Kusch',
 		role: 'member',
-		joinDate: '2024-05-01', // Add a join date for each member
+		joinDate: '2024-05-01',
 	},
 	{
 		id: '47',
@@ -396,7 +375,7 @@ const membersList: Member[] = [
 		lastName: 'Hölck',
 		secondSurname: 'Alvarado',
 		role: 'member',
-		joinDate: '2024-05-05', // Add a join date for each member
+		joinDate: '2024-05-05',
 	},
 	{
 		id: '48',
@@ -404,7 +383,7 @@ const membersList: Member[] = [
 		lastName: 'Klein',
 		secondSurname: 'Neira',
 		role: 'member',
-		joinDate: '2024-05-10', // Add a join date for each member
+		joinDate: '2024-05-10',
 	},
 	{
 		id: '49',
@@ -412,7 +391,7 @@ const membersList: Member[] = [
 		lastName: 'Klein',
 		secondSurname: 'Schmidt',
 		role: 'member',
-		joinDate: '2024-05-15', // Add a join date for each member
+		joinDate: '2024-05-15',
 	},
 	{
 		id: '50',
@@ -420,7 +399,7 @@ const membersList: Member[] = [
 		lastName: 'Krebs',
 		secondSurname: 'Schwerter',
 		role: 'member',
-		joinDate: '2024-05-20', // Add a join date for each member
+		joinDate: '2024-05-20',
 	},
 	{
 		id: '51',
@@ -428,7 +407,7 @@ const membersList: Member[] = [
 		lastName: 'Kusch',
 		secondSurname: 'De La Puente',
 		role: 'member',
-		joinDate: '2024-05-25', // Add a join date for each member
+		joinDate: '2024-05-25',
 	},
 	{
 		id: '52',
@@ -436,7 +415,7 @@ const membersList: Member[] = [
 		lastName: 'Kusch',
 		secondSurname: 'De La Puente',
 		role: 'member',
-		joinDate: '2024-06-01', // Add a join date for each member
+		joinDate: '2024-06-01',
 	},
 	{
 		id: '53',
@@ -444,7 +423,7 @@ const membersList: Member[] = [
 		lastName: 'Kusch',
 		secondSurname: 'De La Puente',
 		role: 'member',
-		joinDate: '2024-06-05', // Add a join date for each member
+		joinDate: '2024-06-05',
 	},
 	{
 		id: '54',
@@ -452,7 +431,7 @@ const membersList: Member[] = [
 		lastName: 'Kusch',
 		secondSurname: 'Hechenleitner',
 		role: 'member',
-		joinDate: '2024-06-10', // Add a join date for each member
+		joinDate: '2024-06-10',
 	},
 	{
 		id: '55',
@@ -460,7 +439,7 @@ const membersList: Member[] = [
 		lastName: 'Kusch',
 		secondSurname: 'Rensinghoff',
 		role: 'member',
-		joinDate: '2024-06-15', // Add a join date for each member
+		joinDate: '2024-06-15',
 	},
 	{
 		id: '56',
@@ -468,7 +447,7 @@ const membersList: Member[] = [
 		lastName: 'Laporte',
 		secondSurname: 'Miguel',
 		role: 'member',
-		joinDate: '2024-06-20', // Add a join date for each member
+		joinDate: '2024-06-20',
 	},
 	{
 		id: '57',
@@ -476,7 +455,7 @@ const membersList: Member[] = [
 		lastName: 'Lintz',
 		secondSurname: 'Stange',
 		role: 'member',
-		joinDate: '2024-06-25', // Add a join date for each member
+		joinDate: '2024-06-25',
 	},
 	{
 		id: '58',
@@ -484,7 +463,7 @@ const membersList: Member[] = [
 		lastName: 'Loebel',
 		secondSurname: 'Arcos',
 		role: 'member',
-		joinDate: '2024-07-01', // Add a join date for each member
+		joinDate: '2024-07-01',
 	},
 	{
 		id: '59',
@@ -492,7 +471,7 @@ const membersList: Member[] = [
 		lastName: 'Marchant',
 		secondSurname: 'Brahm',
 		role: 'member',
-		joinDate: '2024-07-05', // Add a join date for each member
+		joinDate: '2024-07-05',
 	},
 	{
 		id: '60',
@@ -500,7 +479,7 @@ const membersList: Member[] = [
 		lastName: 'Marchant',
 		secondSurname: 'Diaz',
 		role: 'member',
-		joinDate: '2024-07-10', // Add a join date for each member
+		joinDate: '2024-07-10',
 	},
 	{
 		id: '61',
@@ -508,7 +487,7 @@ const membersList: Member[] = [
 		lastName: 'Marchant',
 		secondSurname: 'Diaz',
 		role: 'member',
-		joinDate: '2024-07-15', // Add a join date for each member
+		joinDate: '2024-07-15',
 	},
 	{
 		id: '62',
@@ -516,7 +495,7 @@ const membersList: Member[] = [
 		lastName: 'Marchant',
 		secondSurname: 'France',
 		role: 'member',
-		joinDate: '2024-07-20', // Add a join date for each member
+		joinDate: '2024-07-20',
 	},
 	{
 		id: '63',
@@ -524,7 +503,7 @@ const membersList: Member[] = [
 		lastName: 'Marchant',
 		secondSurname: 'Hardessen',
 		role: 'member',
-		joinDate: '2024-07-25', // Add a join date for each member
+		joinDate: '2024-07-25',
 	},
 	{
 		id: '64',
@@ -532,7 +511,7 @@ const membersList: Member[] = [
 		lastName: 'Marchant',
 		secondSurname: 'Hardessen',
 		role: 'member',
-		joinDate: '2024-08-01', // Add a join date for each member
+		joinDate: '2024-08-01',
 	},
 	{
 		id: '65',
@@ -540,7 +519,7 @@ const membersList: Member[] = [
 		lastName: 'Marchant',
 		secondSurname: 'Martinez',
 		role: 'member',
-		joinDate: '2024-08-05', // Add a join date for each member
+		joinDate: '2024-08-05',
 	},
 	{
 		id: '66',
@@ -548,7 +527,7 @@ const membersList: Member[] = [
 		lastName: 'Marchant',
 		secondSurname: 'Martinez',
 		role: 'member',
-		joinDate: '2024-08-10', // Add a join date for each member
+		joinDate: '2024-08-10',
 	},
 	{
 		id: '67',
@@ -556,7 +535,7 @@ const membersList: Member[] = [
 		lastName: 'Marchant',
 		secondSurname: 'Olbrich',
 		role: 'member',
-		joinDate: '2024-08-15', // Add a join date for each member
+		joinDate: '2024-08-15',
 	},
 	{
 		id: '68',
@@ -564,7 +543,7 @@ const membersList: Member[] = [
 		lastName: 'Marchant',
 		secondSurname: 'Roa',
 		role: 'member',
-		joinDate: '2024-08-20', // Add a join date for each member
+		joinDate: '2024-08-20',
 	},
 	{
 		id: '69',
@@ -572,7 +551,7 @@ const membersList: Member[] = [
 		lastName: 'Meyer',
 		secondSurname: 'Rosemberg',
 		role: 'member',
-		joinDate: '2024-08-25', // Add a join date for each member
+		joinDate: '2024-08-25',
 	},
 	{
 		id: '70',
@@ -580,7 +559,7 @@ const membersList: Member[] = [
 		lastName: 'Meyer',
 		secondSurname: 'Ruiz',
 		role: 'member',
-		joinDate: '2024-09-01', // Add a join date for each member
+		joinDate: '2024-09-01',
 	},
 	{
 		id: '71',
@@ -588,7 +567,7 @@ const membersList: Member[] = [
 		lastName: 'Meza',
 		secondSurname: 'Werner',
 		role: 'member',
-		joinDate: '2024-09-05', // Add a join date for each member
+		joinDate: '2024-09-05',
 	},
 	{
 		id: '72',
@@ -596,7 +575,7 @@ const membersList: Member[] = [
 		lastName: 'Möller-Holtkamp',
 		secondSurname: 'Kaiser',
 		role: 'member',
-		joinDate: '2024-09-10', // Add a join date for each member
+		joinDate: '2024-09-10',
 	},
 	{
 		id: '73',
@@ -604,7 +583,7 @@ const membersList: Member[] = [
 		lastName: 'Möller-Holtkamp',
 		secondSurname: 'Jaederlund',
 		role: 'member',
-		joinDate: '2024-09-15', // Add a join date for each member
+		joinDate: '2024-09-15',
 	},
 	{
 		id: '74',
@@ -612,7 +591,7 @@ const membersList: Member[] = [
 		lastName: 'Möller-Holtkamp',
 		secondSurname: 'Jaederlund',
 		role: 'member',
-		joinDate: '2024-09-20', // Add a join date for each member
+		joinDate: '2024-09-20',
 	},
 	{
 		id: '75',
@@ -620,7 +599,7 @@ const membersList: Member[] = [
 		lastName: 'Moore',
 		secondSurname: 'Ross',
 		role: 'member',
-		joinDate: '2024-09-25', // Add a join date for each member
+		joinDate: '2024-09-25',
 	},
 	{
 		id: '76',
@@ -628,7 +607,7 @@ const membersList: Member[] = [
 		lastName: 'Navarro',
 		secondSurname: 'Gonzalez',
 		role: 'member',
-		joinDate: '2024-10-01', // Add a join date for each member
+		joinDate: '2024-10-01',
 	},
 	{
 		id: '77',
@@ -636,7 +615,7 @@ const membersList: Member[] = [
 		lastName: 'Navarro',
 		secondSurname: 'Gonzalez',
 		role: 'member',
-		joinDate: '2024-10-05', // Add a join date for each member
+		joinDate: '2024-10-05',
 	},
 	{
 		id: '78',
@@ -644,7 +623,7 @@ const membersList: Member[] = [
 		lastName: 'Neumann',
 		secondSurname: 'Heisse',
 		role: 'member',
-		joinDate: '2024-10-10', // Add a join date for each member
+		joinDate: '2024-10-10',
 	},
 	{
 		id: '79',
@@ -652,7 +631,7 @@ const membersList: Member[] = [
 		lastName: 'Neumann',
 		secondSurname: 'Perez',
 		role: 'member',
-		joinDate: '2024-10-15', // Add a join date for each member
+		joinDate: '2024-10-15',
 	},
 	{
 		id: '80',
@@ -660,7 +639,7 @@ const membersList: Member[] = [
 		lastName: 'Oelckers',
 		secondSurname: 'Stange',
 		role: 'member',
-		joinDate: '2024-10-20', // Add a join date for each member
+		joinDate: '2024-10-20',
 	},
 	{
 		id: '81',
@@ -668,7 +647,7 @@ const membersList: Member[] = [
 		lastName: 'Oyarzun',
 		secondSurname: 'Aguilera',
 		role: 'member',
-		joinDate: '2024-10-25', // Add a join date for each member
+		joinDate: '2024-10-25',
 	},
 	{
 		id: '82',
@@ -676,7 +655,7 @@ const membersList: Member[] = [
 		lastName: 'Oyarzun',
 		secondSurname: 'Cornejo',
 		role: 'member',
-		joinDate: '2024-11-01', // Add a join date for each member
+		joinDate: '2024-11-01',
 	},
 	{
 		id: '83',
@@ -684,7 +663,7 @@ const membersList: Member[] = [
 		lastName: 'Oyarzun',
 		secondSurname: 'Scholtbach',
 		role: 'member',
-		joinDate: '2024-11-05', // Add a join date for each member
+		joinDate: '2024-11-05',
 	},
 	{
 		id: '84',
@@ -692,7 +671,7 @@ const membersList: Member[] = [
 		lastName: 'Oyarzun',
 		secondSurname: 'Scholtbach',
 		role: 'member',
-		joinDate: '2024-11-10', // Add a join date for each member
+		joinDate: '2024-11-10',
 	},
 	{
 		id: '85',
@@ -700,7 +679,7 @@ const membersList: Member[] = [
 		lastName: 'Pavez',
 		secondSurname: 'Cieselski',
 		role: 'member',
-		joinDate: '2024-11-15', // Add a join date for each member
+		joinDate: '2024-11-15',
 	},
 	{
 		id: '86',
@@ -708,7 +687,7 @@ const membersList: Member[] = [
 		lastName: 'Pavez',
 		secondSurname: 'Von Freeden',
 		role: 'member',
-		joinDate: '2024-11-20', // Add a join date for each member
+		joinDate: '2024-11-20',
 	},
 	{
 		id: '87',
@@ -716,7 +695,7 @@ const membersList: Member[] = [
 		lastName: 'Reuter',
 		secondSurname: 'Brown',
 		role: 'member',
-		joinDate: '2024-11-25', // Add a join date for each member
+		joinDate: '2024-11-25',
 	},
 	{
 		id: '88',
@@ -724,7 +703,7 @@ const membersList: Member[] = [
 		lastName: 'Reuter',
 		secondSurname: 'Mauret',
 		role: 'member',
-		joinDate: '2024-12-01', // Add a join date for each member
+		joinDate: '2024-12-01',
 	},
 	{
 		id: '89',
@@ -732,7 +711,7 @@ const membersList: Member[] = [
 		lastName: 'Reuter',
 		secondSurname: 'Möenne-Loccoz',
 		role: 'member',
-		joinDate: '2024-12-05', // Add a join date for each member
+		joinDate: '2024-12-05',
 	},
 	{
 		id: '90',
@@ -740,7 +719,7 @@ const membersList: Member[] = [
 		lastName: 'Reuter',
 		secondSurname: 'Möenne-Loccoz',
 		role: 'member',
-		joinDate: '2024-12-10', // Add a join date for each member
+		joinDate: '2024-12-10',
 	},
 	{
 		id: '91',
@@ -748,7 +727,7 @@ const membersList: Member[] = [
 		lastName: 'Rinsche',
 		secondSurname: 'Andreu',
 		role: 'member',
-		joinDate: '2024-12-15', // Add a join date for each member
+		joinDate: '2024-12-15',
 	},
 	{
 		id: '92',
@@ -756,7 +735,7 @@ const membersList: Member[] = [
 		lastName: 'Schmidt',
 		secondSurname: 'Gebauer',
 		role: 'member',
-		joinDate: '2024-12-20', // Add a join date for each member
+		joinDate: '2024-12-20',
 	},
 	{
 		id: '93',
@@ -764,7 +743,7 @@ const membersList: Member[] = [
 		lastName: 'Schmidt',
 		secondSurname: 'Gebauer',
 		role: 'member',
-		joinDate: '2024-12-25', // Add a join date for each member
+		joinDate: '2024-12-25',
 	},
 	{
 		id: '94',
@@ -772,7 +751,7 @@ const membersList: Member[] = [
 		lastName: 'Schmidt',
 		secondSurname: 'Himpel',
 		role: 'member',
-		joinDate: '2024-12-30', // Add a join date for each member
+		joinDate: '2024-12-30',
 	},
 	{
 		id: '95',
@@ -780,7 +759,7 @@ const membersList: Member[] = [
 		lastName: 'Scholtbach',
 		secondSurname: 'Schuhmacher',
 		role: 'member',
-		joinDate: '2025-01-05', // Add a join date for each member
+		joinDate: '2025-01-05',
 	},
 	{
 		id: '96',
@@ -788,7 +767,7 @@ const membersList: Member[] = [
 		lastName: 'Schwerter',
 		secondSurname: 'Siebald',
 		role: 'member',
-		joinDate: '2025-01-10', // Add a join date for each member
+		joinDate: '2025-01-10',
 	},
 	{
 		id: '97',
@@ -796,7 +775,7 @@ const membersList: Member[] = [
 		lastName: 'Stange',
 		secondSurname: 'Münzenmayer',
 		role: 'member',
-		joinDate: '2025-01-15', // Add a join date for each member
+		joinDate: '2025-01-15',
 	},
 	{
 		id: '99',
@@ -804,7 +783,7 @@ const membersList: Member[] = [
 		lastName: 'Stange',
 		secondSurname: 'Paris',
 		role: 'member',
-		joinDate: '2025-01-25', // Add a join date for each member
+		joinDate: '2025-01-25',
 	},
 	{
 		id: '100',
@@ -812,7 +791,7 @@ const membersList: Member[] = [
 		lastName: 'Stange',
 		secondSurname: 'Teske',
 		role: 'member',
-		joinDate: '2025-02-01', // Add a join date for each member
+		joinDate: '2025-02-01',
 	},
 	{
 		id: '101',
@@ -820,7 +799,7 @@ const membersList: Member[] = [
 		lastName: 'Stange',
 		secondSurname: 'Wahl',
 		role: 'member',
-		joinDate: '2025-02-05', // Add a join date for each member
+		joinDate: '2025-02-05',
 	},
 	{
 		id: '102',
@@ -828,7 +807,7 @@ const membersList: Member[] = [
 		lastName: 'Stange',
 		secondSurname: 'Wahl',
 		role: 'member',
-		joinDate: '2025-02-10', // Add a join date for each member
+		joinDate: '2025-02-10',
 	},
 	{
 		id: '103',
@@ -836,7 +815,7 @@ const membersList: Member[] = [
 		lastName: 'Stolzenbach',
 		secondSurname: 'Minte',
 		role: 'member',
-		joinDate: '2025-02-15', // Add a join date for each member
+		joinDate: '2025-02-15',
 	},
 	{
 		id: '104',
@@ -844,7 +823,7 @@ const membersList: Member[] = [
 		lastName: 'Teuber',
 		secondSurname: 'Donoso',
 		role: 'member',
-		joinDate: '2025-02-20', // Add a join date for each member
+		joinDate: '2025-02-20',
 	},
 	{
 		id: '105',
@@ -852,7 +831,7 @@ const membersList: Member[] = [
 		lastName: 'Wahl',
 		secondSurname: 'Böhme',
 		role: 'member',
-		joinDate: '2025-02-25', // Add a join date for each member
+		joinDate: '2025-02-25',
 	},
 	{
 		id: '106',
@@ -860,7 +839,7 @@ const membersList: Member[] = [
 		lastName: 'Wammes',
 		secondSurname: 'Matvienko-Sikar',
 		role: 'member',
-		joinDate: '2025-03-01', // Add a join date for each member
+		joinDate: '2025-03-01',
 	},
 	{
 		id: '107',
@@ -868,7 +847,7 @@ const membersList: Member[] = [
 		lastName: 'Wammes',
 		secondSurname: 'Soto',
 		role: 'member',
-		joinDate: '2025-03-05', // Add a join date for each member
+		joinDate: '2025-03-05',
 	},
 	{
 		id: '108',
@@ -876,7 +855,7 @@ const membersList: Member[] = [
 		lastName: 'Wammes',
 		secondSurname: 'Soto',
 		role: 'member',
-		joinDate: '2025-03-10', // Add a join date for each member
+		joinDate: '2025-03-10',
 	},
 	{
 		id: '109',
@@ -884,7 +863,7 @@ const membersList: Member[] = [
 		lastName: 'Wammes',
 		secondSurname: 'Soto',
 		role: 'member',
-		joinDate: '2025-03-15', // Add a join date for each member
+		joinDate: '2025-03-15',
 	},
 	{
 		id: '110',
@@ -892,7 +871,7 @@ const membersList: Member[] = [
 		lastName: 'Weitzler',
 		secondSurname: 'Stange',
 		role: 'member',
-		joinDate: '2025-03-20', // Add a join date for each member
+		joinDate: '2025-03-20',
 	},
 	{
 		id: '111',
@@ -900,7 +879,7 @@ const membersList: Member[] = [
 		lastName: 'Weitzler',
 		secondSurname: 'Zarges',
 		role: 'member',
-		joinDate: '2025-03-25', // Add a join date for each member
+		joinDate: '2025-03-25',
 	},
 	{
 		id: '112',
@@ -908,7 +887,7 @@ const membersList: Member[] = [
 		lastName: 'Werner',
 		secondSurname: 'Schröder',
 		role: 'member',
-		joinDate: '2025-04-01', // Add a join date for each member
+		joinDate: '2025-04-01',
 	},
 	{
 		id: '113',
@@ -916,7 +895,7 @@ const membersList: Member[] = [
 		lastName: 'Westermaier',
 		secondSurname: 'Flores',
 		role: 'member',
-		joinDate: '2025-04-05', // Add a join date for each member
+		joinDate: '2025-04-05',
 	},
 	{
 		id: '114',
@@ -924,7 +903,7 @@ const membersList: Member[] = [
 		lastName: 'Winkler',
 		secondSurname: 'Ghio',
 		role: 'member',
-		joinDate: '2025-04-10', // Add a join date for each member
+		joinDate: '2025-04-10',
 	},
 	{
 		id: '115',
@@ -932,7 +911,7 @@ const membersList: Member[] = [
 		lastName: 'Winkler',
 		secondSurname: 'Thomas',
 		role: 'member',
-		joinDate: '2025-04-15', // Add a join date for each member
+		joinDate: '2025-04-15',
 	},
 	{
 		id: '116',
@@ -940,18 +919,6 @@ const membersList: Member[] = [
 		lastName: 'Winkler',
 		secondSurname: 'Werner',
 		role: 'member',
-		joinDate: '2025-04-20', // Add a join date for each member
+		joinDate: '2025-04-20',
 	},
 ];
-
-export const members = {
-	getAll: () => {
-		return membersList;
-	},
-	getMembers: () => {
-		return membersList.filter((member) => member.role === 'member');
-	},
-	getDirectors: () => {
-		return membersList.filter((member) => member.role !== 'member');
-	},
-};

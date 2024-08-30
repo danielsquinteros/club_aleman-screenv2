@@ -1,18 +1,21 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { members } from '@/data/members';
+import { Member } from '@/data-access/members';
+import { Button } from './ui/button';
 
 const ITEMS_PER_PAGE = 8;
 const GRID_ROWS = 2;
 
-const DirectorsList = () => {
+interface DirectorsListProps {
+	directors: Member[];
+}
+
+const DirectorsList: React.FC<DirectorsListProps> = ({ directors }) => {
 	const { t } = useTranslation();
 	const [currentPage, setCurrentPage] = useState(1);
 
-	const directorsList = members.getDirectors();
-
-	const totalPages = Math.ceil(directorsList.length / ITEMS_PER_PAGE);
-	const paginatedDirectors = directorsList.slice(
+	const totalPages = Math.ceil(directors.length / ITEMS_PER_PAGE);
+	const paginatedDirectors = directors.slice(
 		(currentPage - 1) * ITEMS_PER_PAGE,
 		currentPage * ITEMS_PER_PAGE,
 	);
@@ -64,19 +67,27 @@ const DirectorsList = () => {
 				))}
 			</div>
 			{totalPages > 1 && (
-				<div className='flex justify-center mt-8'>
+				<div className='flex justify-center mt-8 gap-2'>
 					{Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-						<button
+						// <button
+						// 	key={page}
+						// 	className={`mx-1 px-3 py-1 rounded ${
+						// 		currentPage === page
+						// 			? 'bg-blue-500 text-white'
+						// 			: 'bg-gray-200 hover:bg-gray-300'
+						// 	}`}
+						// 	onClick={() => handlePageChange(page)}
+						// >
+						// 	{page}
+						// </button>
+						<Button
 							key={page}
-							className={`mx-1 px-3 py-1 rounded ${
-								currentPage === page
-									? 'bg-blue-500 text-white'
-									: 'bg-gray-200 hover:bg-gray-300'
-							}`}
+							variant={currentPage === page ? 'default' : 'outline'}
+							size='sm'
 							onClick={() => handlePageChange(page)}
 						>
 							{page}
-						</button>
+						</Button>
 					))}
 				</div>
 			)}
