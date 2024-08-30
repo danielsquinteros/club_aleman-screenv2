@@ -1,0 +1,46 @@
+{
+	"welcome": "Willkommen im Deutschen Club von Puerto Montt",
+	"interact": "Berühren Sie, um zu interagieren",
+	"directors": "Vorstand",
+	"members": "Mitglieder",
+	"gallery": "Galerie",
+	"history": "Geschichte",
+	"name": "Name",
+	"role": "Rolle",
+	"email": "E-Mail",
+	"phone": "Telefon",
+	"clearFilter": "Filter löschen",
+	"roles": {
+		"president": "Präsident",
+		"vice_president": "Vizepräsident",
+		"secretary": "Sekretär",
+		"treasurer": "Schatzmeister",
+		"board_member": "Vorstandsmitglied",
+		"honor_advisor": "Ehrenberater",
+		"honor_member": "Ehrenmitglied",
+		"member": "Mitglied"
+	},
+	"fullscreen": "Vollbild",
+	"historyEvents": {
+		"clubFounded": {
+			"title": "Gründung des Clubs",
+			"description": "Der Deutsche Club von Puerto Montt wurde im Jahr 1860 gegründet."
+		},
+		"firstClubhouse": {
+			"title": "Erstes Clubhaus",
+			"description": "Das erste Clubhaus wurde im Jahr 1900 erbaut."
+		},
+		"majorExpansion": {
+			"title": "Major Expansion",
+			"description": "Die Anlage wurde im Jahr 1950 erweitert."
+		},
+		"modernization": {
+			"title": "Modernisierung",
+			"description": "Die Anlage wurde im Jahr 2000 modernisiert."
+		},
+		"presentDay": {
+			"title": "Gegenwart",
+			"description": "Der Deutsche Club von Puerto Montt ist heute ein wichtiger Treffpunkt für Deutsche in Chile."
+		}
+	}
+}

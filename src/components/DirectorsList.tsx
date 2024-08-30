@@ -1,0 +1,67 @@
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { members } from '@/data/members';
+
+const ITEMS_PER_PAGE = 8;
+
+const DirectorsList = () => {
+	const { t } = useTranslation();
+	const [currentPage, setCurrentPage] = useState(1);
+
+	const directorsList = members.getDirectors();
+
+	const totalPages = Math.ceil(directorsList.length / ITEMS_PER_PAGE);
+	const paginatedDirectors = directorsList.slice(
+		(currentPage - 1) * ITEMS_PER_PAGE,
+		currentPage * ITEMS_PER_PAGE,
+	);
+
+	const handlePageChange = (page: number) => {
+		setCurrentPage(page);
+	};
+
+	const getAvatarUrl = (id: string) => {
+		return `https://api.dicebear.com/6.x/initials/svg?seed=${id}`;
+	};
+
+	return (
+		<div className='flex flex-col justify-between h-full'>
+			<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto'>
+				{paginatedDirectors.map((director) => (
+					<div key={director.id} className='flex flex-col items-center'>
+						<img
+							src={director.avatarUrl || getAvatarUrl(director.id)}
+							alt={`${director.firstName} ${director.lastName}`}
+							className='w-32 h-32 rounded-full mb-4 object-cover border-4 border-gray-200'
+						/>
+						<h2 className='text-2xl font-bold text-center'>
+							{`${director.firstName} ${director.lastName}`}
+						</h2>
+						<p className='text-xl text-gray-600 text-center'>
+							{t(`roles.${director.role}`)}
+						</p>
+					</div>
+				))}
+			</div>
+			{totalPages > 1 && (
+				<div className='flex justify-center mt-8'>
+					{Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+						<button
+							key={page}
+							className={`mx-1 px-3 py-1 rounded ${
+								currentPage === page
+									? 'bg-blue-500 text-white'
+									: 'bg-gray-200 hover:bg-gray-300'
+							}`}
+							onClick={() => handlePageChange(page)}
+						>
+							{page}
+						</button>
+					))}
+				</div>
+			)}
+		</div>
+	);
+};
+
+export default DirectorsList;
