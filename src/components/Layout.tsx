@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import ImageCarousel from './ImageCarousel';
 
-const IDLE_TIMEOUT = 60000; // 600ms (0.6 seconds) for demonstration, adjust as needed
+const IDLE_TIMEOUT = 60000; // 60 seconds
 const BUTTON_HIDE_TIMEOUT = 5000; // 5 seconds
 
 interface Image {
@@ -43,6 +43,12 @@ const Layout: React.FC = () => {
     setIsButtonVisible(false);
   }, []);
 
+  const handleUserActivity = useCallback((): void => {
+    if (!isIdle) {
+      resetTimer();
+    }
+  }, [isIdle, resetTimer]);
+
   useEffect(() => {
     const checkIdleTime = setInterval(() => {
       if (Date.now() - lastActiveTime > IDLE_TIMEOUT) {
@@ -50,10 +56,13 @@ const Layout: React.FC = () => {
       }
     }, 1000);
 
+    document.addEventListener('mousemove', handleUserActivity);
+
     return () => {
       clearInterval(checkIdleTime);
+      document.removeEventListener('mousemove', handleUserActivity);
     };
-  }, [lastActiveTime]);
+  }, [lastActiveTime, handleUserActivity]);
 
   useEffect(() => {
     let hideTimeout: NodeJS.Timeout;
@@ -71,26 +80,28 @@ const Layout: React.FC = () => {
 
   useEffect(() => {
     const handleDocumentClick = (event: MouseEvent): void => {
-      if (isButtonVisible && buttonRef.current && !buttonRef.current.contains(event.target as Node)) {
-        hideButton();
+      if (isIdle) {
+        if (isButtonVisible) {
+          // If button is visible and click is outside the button, hide the button
+          if (buttonRef.current && !buttonRef.current.contains(event.target as Node)) {
+            hideButton();
+          }
+        } else {
+          // If button is not visible, show the button
+          showButton();
+        }
+      } else {
+        // If not idle, reset the timer
+        handleUserActivity();
       }
     };
 
-    if (isIdle) {
-      document.addEventListener('click', showButton);
-    } else {
-      document.removeEventListener('click', showButton);
-    }
-
-    if (isButtonVisible) {
-      document.addEventListener('click', handleDocumentClick);
-    }
+    document.addEventListener('click', handleDocumentClick);
 
     return () => {
-      document.removeEventListener('click', showButton);
       document.removeEventListener('click', handleDocumentClick);
     };
-  }, [isIdle, isButtonVisible, showButton, hideButton]);
+  }, [isIdle, isButtonVisible, showButton, hideButton, handleUserActivity]);
 
   const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
     event.stopPropagation();
@@ -112,8 +123,7 @@ const Layout: React.FC = () => {
           <div className="fixed inset-0 bg-white flex justify-center items-center z-10">
             <ImageCarousel images={images} interval={10000} />
           </div>
-          <div   
-		 	 className="fixed inset-x-0 bottom-10 flex justify-center items-center z-20 pointer-events-none">
+          <div className="fixed inset-x-0 bottom-10 flex justify-center items-center z-20 pointer-events-none">
             {isButtonVisible && (
               <button 
                 ref={buttonRef}
