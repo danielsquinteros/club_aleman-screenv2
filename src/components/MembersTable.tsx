@@ -31,11 +31,12 @@ import {
 	FormMessage,
 } from '@/components/ui/form';
 import { Member } from '@/db/schema';
+import VirtualKeyboard from './VirtualKeyboard';
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const ITEMS_PER_PAGE = 6;
 const TOTAL_ROWS = 6;
-const SECRET_PASSWORD = 'facil';
+const SECRET_PASSWORD = '1234';
 
 interface MembersTableProps {
 	members: Member[];
@@ -49,9 +50,25 @@ const MembersTable: React.FC<MembersTableProps> = ({ members }) => {
 	const [isDialogOpen, setIsDialogOpen] = useState(false);
 	const [isUnlocked, setIsUnlocked] = useState(false);
 	const [showPassword, setShowPassword] = useState(false);
+	const [password, setPassword] = useState('');
+
+	const handleKeyPress = (key: string) => {
+		setPassword(prev => prev + key);
+		form.setValue('password', password + key);
+	};
+
+	const handleBackspace = () => {
+		setPassword(prev => prev.slice(0, -1));
+		form.setValue('password', password.slice(0, -1));
+  };
+
+	const handleClear = () => {
+		setPassword('');
+		form.setValue('password', '');
+	};
 
 	const passwordSchema = z.object({
-		password: z.string().min(1, { message: 'passwordRequired' }),
+		password: z.string().min(4, { message: 'passwordRequired' }),
 	});
 
 	const form = useForm<z.infer<typeof passwordSchema>>({
@@ -89,6 +106,7 @@ const MembersTable: React.FC<MembersTableProps> = ({ members }) => {
 		setSelectedMember(member);
 		setIsDialogOpen(true);
 		setIsUnlocked(false);
+		setPassword('')
 		form.reset();
 	};
 
@@ -107,7 +125,7 @@ const MembersTable: React.FC<MembersTableProps> = ({ members }) => {
 	};
 
 	return (
-		<div className='flex flex-col space-y-4'>
+		<div className='flex flex-col space-y-4 justify-center'>
 			<div className='rounded-md border'>
 				<Table>
 					<TableHeader>
@@ -227,11 +245,16 @@ const MembersTable: React.FC<MembersTableProps> = ({ members }) => {
 												</div>
 											</FormControl>
 											<FormDescription>
-												La contraseña es "facil".
+												La contraseña es "1234".
 											</FormDescription>
 											<FormMessage />
 										</FormItem>
 									)}
+								/>
+								<VirtualKeyboard
+									onKeyPress={handleKeyPress}
+									onBackspace={handleBackspace}
+									onClear={handleClear}
 								/>
 								<DialogFooter>
 									<Button

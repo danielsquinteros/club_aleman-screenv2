@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from './ui/button';
 import { Member } from '@/db/schema';
 
-const ITEMS_PER_PAGE = 8;
+const ITEMS_PER_PAGE = 12;
 const GRID_ROWS = 2;
 
 interface DirectorsListProps {
@@ -36,7 +36,7 @@ const DirectorsList: React.FC<DirectorsListProps> = ({ directors }) => {
 	};
 
 	return (
-		<div className='flex flex-col justify-between h-full'>
+		<div className='flex flex-col justify-center h-full'>
 			<div
 				className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto'
 				style={{ gridTemplateRows: `repeat(${GRID_ROWS}, minmax(0, 1fr))` }}

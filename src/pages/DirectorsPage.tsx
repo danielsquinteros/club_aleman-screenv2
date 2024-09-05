@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import DirectorsList from '@/components/DirectorsList';
 import { members } from '@/data-access/members';
 import { DirectorsSkeleton } from '@/components/DirectorsSkeleton';
-import PageTitle from '@/components/PageTitle';
+// import PageTitle from '@/components/PageTitle';
 import { Member } from '@/db/schema';
 
 const DirectorsPage = () => {
-	const { t } = useTranslation();
+	// const { t } = useTranslation();
 	const [directorsList, setDirectorsList] = useState<Member[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
@@ -21,6 +21,7 @@ const DirectorsPage = () => {
 			} catch (err) {
 				setError('Failed to fetch directors');
 				setIsLoading(false);
+				console.error(err)
 			}
 		};
 
@@ -28,14 +29,16 @@ const DirectorsPage = () => {
 	}, []);
 
 	return (
-		<div className='flex-grow'>
-			<PageTitle title={t('directors')} />
+		<div className='h-full p-14'>
+			{/* <PageTitle title={t('directors')} /> */}
 			{isLoading ? (
 				<DirectorsSkeleton />
 			) : error ? (
 				<div>{error}</div>
 			) : (
-				<DirectorsList directors={directorsList} />
+				<>
+					<DirectorsList directors={directorsList} />
+				</>
 			)}
 		</div>
 	);

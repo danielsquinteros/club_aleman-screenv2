@@ -1,44 +1,118 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { Button } from './ui/button';
 
 const NavMenu = () => {
 	const { t } = useTranslation();
 
 	const menuItems = [
 		{
+			backgroundColor: "white",
+			
+		},
+		{
+			backgroundImage: "/images/home/bandera.png",
+			
+		},
+		{
+			backgroundColor: "white",
+			
+		},
+		{
+			backgroundColor: "black",
+			
+		},
+		{
+			backgroundColor: "black",
+			
+		},
+		{
+			backgroundColor: "white",
+			
+		},
+		{
+			backgroundImage: "/images/home/old_club.png",
+			
+		},
+		{
+			backgroundColor: "white",
+			
+		},
+		{
+			backgroundColor: "white",
+			icon: '/images/icons/circle_black.svg',
 			key: 'directors',
-			color: 'bg-black text-white hover:bg-black/90',
+			color: 'text-black',
 			to: '/directors',
 		},
 		{
+			backgroundColor: "black",
+			icon: '/images/icons/circle_white.svg',
 			key: 'members',
-			color: 'bg-black text-white hover:bg-black/90',
+			color: 'text-white',
 			to: '/members',
 		},
 		{
+			backgroundColor: "red",
+			icon: '/images/icons/circle_white.svg',
 			key: 'gallery',
-			color: 'bg-red-500 text-white hover:bg-red-500/90',
+			color: 'text-white',
 			to: '/gallery',
 		},
 		{
-			key: 'history',
-			color: 'bg-yellow-500 text-black hover:bg-yellow-500/90',
-			to: '/history',
+			backgroundColor: "orange",
+			// icon: '/images/icons/circle_white.svg',
+			// key: 'history',
+			// color: 'text-white',
+			// to: '/history',
+		},
+		{
+			backgroundColor: "red",
+			
+		},
+		{
+			backgroundColor: "white",
+			
+		},
+		{
+			backgroundColor: "black",
+			
+		},
+		{
+			backgroundColor: "white",
+			
 		},
 	];
 
 	return (
-		<div className='grid grid-cols-2 gap-6 max-w-3xl mx-auto w-full'>
-			{menuItems.map(({ key, color, to }) => (
-				<Button
-					key={key}
-					className={`p-20 rounded-2xl flex items-center justify-center text-3xl font-bold ${color}`}
-					asChild
-				>
-					<Link to={to}>{t(key)}</Link>
-				</Button>
+		<div className='grid grid-cols-4 grid-rows-4 w-full h-full'>
+
+			{menuItems.map(({ key, backgroundColor, backgroundImage, to, color, icon }) => (
+				<div 
+				style={{
+					backgroundColor,
+					backgroundImage: `url(${backgroundImage})`,
+					backgroundPosition: 'center',
+					backgroundRepeat: 'no-repeat',
+					objectFit: 'contain'
+				}}
+				className="w-full h-full flex items-center justify-center">
+					{
+						to && (
+								<div className='flex flex-col justify-center items-center'>
+									<Link to={to}>
+										<img
+											src={icon}
+											alt='Icono Círculo'
+											className='w-12 h-auto mb-4'
+										/>
+									</Link>
+									<p className={`text-2xl ${color}`}>
+										{t(key)}
+									</p>
+								</div>
+						)
+					}
+				</div>
 			))}
 		</div>
 	);

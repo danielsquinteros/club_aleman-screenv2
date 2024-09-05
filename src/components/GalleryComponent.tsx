@@ -61,7 +61,7 @@ const GalleryComponent: React.FC<GalleryComponentProps> = ({ images }) => {
 							<img
 								src={image.url}
 								alt={image.title}
-								className='w-full h-[50vh] object-cover'
+								className='w-full h-[75vh] object-cover'
 							/>
 						</div>
 					))}

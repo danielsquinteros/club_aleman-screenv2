@@ -2,7 +2,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 export function MembersSkeleton() {
 	return (
-		<div className='flex flex-col space-y-4'>
+		<div className='flex flex-col space-y-4 justify-center'>
 			<div className='rounded-md border'>
 				<div className='p-4'>
 					<div className='space-y-2'>

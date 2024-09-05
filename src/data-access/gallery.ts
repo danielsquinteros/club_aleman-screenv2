@@ -1,6 +1,6 @@
 import { GalleryImage } from '@/db/schema';
 
-const galleryImages: GalleryImage[] = Array.from({ length: 16 }, (_, i) => ({
+const galleryImages: GalleryImage[] = Array.from({ length: 5 }, (_, i) => ({
 	id: `image-${i + 1}`,
 	url: `/images/gallery/image-${i + 1}.jpg`,
 	title: `Gallery image ${i + 1}`,

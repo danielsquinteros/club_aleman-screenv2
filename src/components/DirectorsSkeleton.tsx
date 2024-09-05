@@ -2,7 +2,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 export function DirectorsSkeleton() {
 	return (
-		<div className='flex flex-col justify-between h-full'>
+		<div className='flex flex-col justify-center h-full'>
 			<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto'>
 				{Array.from({ length: 8 }).map((_, i) => (
 					<div key={i} className='flex flex-col items-center'>

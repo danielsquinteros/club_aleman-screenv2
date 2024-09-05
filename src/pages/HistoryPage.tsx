@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import HistoryComponent from '@/components/HistoryComponent';
 import { history } from '@/data-access/history';
 import { HistorySkeleton } from '@/components/HistorySkeleton';
-import PageTitle from '@/components/PageTitle';
+// import PageTitle from '@/components/PageTitle';
 import { HistoryEvent } from '@/db/schema';
 
 const HistoryPage = () => {
-	const { t } = useTranslation();
+	// const { t } = useTranslation();
 	const [events, setEvents] = useState<HistoryEvent[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
@@ -21,6 +21,7 @@ const HistoryPage = () => {
 			} catch (err) {
 				setError('Failed to fetch history events');
 				setIsLoading(false);
+				console.error(err)
 			}
 		};
 
@@ -28,8 +29,7 @@ const HistoryPage = () => {
 	}, []);
 
 	return (
-		<div className='flex-grow'>
-			<PageTitle title={t('history')} />
+		<div className='h-full p-14'>
 			{isLoading ? (
 				<HistorySkeleton />
 			) : error ? (
