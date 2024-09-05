@@ -1,7 +1,9 @@
 {
   "welcome": "Welcome to the German Club of Puerto Montt",
+  "start": "Start",
   "interact": "Touch to interact",
-  "directors": "Board of Directors",
+  "backToInteract": "Back to start",
+  "directors": "Directors",
   "members": "Members",
   "gallery": "Gallery",
   "history": "History",

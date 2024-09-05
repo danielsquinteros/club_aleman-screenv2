@@ -4,7 +4,7 @@ export function GallerySkeleton() {
 	return (
 		<div className='max-w-4xl mx-auto space-y-4'>
 			<div className='relative'>
-				<Skeleton className='h-[50vh] w-full' /> {/* Main image */}
+				<Skeleton className='h-[75vh] w-full' /> {/* Main image */}
 				<Skeleton className='absolute bottom-4 right-4 h-10 w-32' />{' '}
 				{/* Fullscreen button */}
 			</div>

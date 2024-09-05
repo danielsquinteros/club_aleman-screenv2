@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import GalleryComponent from '@/components/GalleryComponent';
 import { gallery } from '@/data-access/gallery';
 import { GallerySkeleton } from '@/components/GallerySkeleton';
-import PageTitle from '@/components/PageTitle';
+// import PageTitle from '@/components/PageTitle';
 import { GalleryImage } from '@/db/schema';
 
 const GalleryPage = () => {
-	const { t } = useTranslation();
+	// const { t } = useTranslation();
 	const [images, setImages] = useState<GalleryImage[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
@@ -21,6 +21,7 @@ const GalleryPage = () => {
 			} catch (err) {
 				setError('Failed to fetch gallery images');
 				setIsLoading(false);
+				console.error(err)
 			}
 		};
 
@@ -28,8 +29,7 @@ const GalleryPage = () => {
 	}, []);
 
 	return (
-		<div className='flex-grow'>
-			<PageTitle title={t('gallery')} />
+		<div className='h-full p-14'>
 			{isLoading ? (
 				<GallerySkeleton />
 			) : error ? (

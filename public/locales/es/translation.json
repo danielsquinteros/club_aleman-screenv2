@@ -1,7 +1,9 @@
 {
   "welcome": "Bienvenido al Club Alemán de Puerto Montt",
+  "start": "Inicio",
   "interact": "Toca para interactuar",
-  "directors": "Junta Directiva",
+  "backToInteract": "Volver al inicio",
+  "directors": "Directiva",
   "members": "Socios",
   "gallery": "Galería",
   "history": "Historia",
