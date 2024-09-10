@@ -1,17 +1,17 @@
 import { HistoryEvent } from '@/db/schema';
 
-const historyEvents: HistoryEvent[] = [
-	{ year: 1860, event: 'clubFounded' },
-	{ year: 1900, event: 'firstClubhouse' },
-	{ year: 1950, event: 'majorExpansion' },
-	{ year: 2000, event: 'modernization' },
-	{ year: 2023, event: 'presentDay' },
-];
+const API_URL = import.meta.env.VITE_DASHBOARD_URL || 'http://localhost:3000';
 
-export const history = {
-	getEvents: async (): Promise<HistoryEvent[]> => {
-		// Simulating an API call with a delay
-		await new Promise((resolve) => setTimeout(resolve, 500));
-		return historyEvents;
+interface HistoryAPI {
+	getEvents: () => Promise<HistoryEvent[]>;
+}
+
+export const history: HistoryAPI = {
+	getEvents: async () => {
+		const response = await fetch(`${API_URL}/api/history`);
+		if (!response.ok) {
+			throw new Error('Failed to fetch history events');
+		}
+		return response.json();
 	},
 };

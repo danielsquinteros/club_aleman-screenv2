@@ -1,60 +1,62 @@
 {
-  "welcome": "Welcome to the German Club of Puerto Montt",
-  "start": "Start",
-  "interact": "Touch to interact",
-  "backToInteract": "Back to start",
-  "directors": "Directors",
-  "members": "Members",
-  "gallery": "Gallery",
-  "history": "History",
-  "name": "Name",
-  "role": "Role",
-  "email": "Email",
-  "phone": "Phone",
-  "clearFilter": "Clear Filter",
-  "roles": {
-    "president": "President",
-    "vice_president": "Vice President",
-    "secretary": "Secretary",
-    "treasurer": "Treasurer",
-    "board_member": "Board Member",
-    "honor_advisor": "Honor Advisor",
-    "honor_member": "Honor Member",
-    "member": "Member"
-  },
-  "fullscreen": "Fullscreen",
-  "historyEvents": {
-    "clubFounded": {
-      "title": "Club Founded",
-      "description": "The German Club of Puerto Montt was founded in 1860."
-    },
-    "firstClubhouse": {
-      "title": "First Clubhouse",
-      "description": "The first clubhouse was built in 1900."
-    },
-    "majorExpansion": {
-      "title": "Major Expansion",
-      "description": "The facility was expanded in 1950."
-    },
-    "modernization": {
-      "title": "Modernization",
-      "description": "The facility was modernized in 2000."
-    },
-    "presentDay": {
-      "title": "Present Day",
-      "description": "The German Club of Puerto Montt is today an important meeting place for Germans in Chile."
-    }
-  },
-  "joinDate": "Join Date",
-  "actions": "Actions",
-  "viewDetails": "View Details",
-  "enterPassword": "Enter password",
-  "unlock": "Unlock",
-  "cancel": "Cancel",
-  "memberDetails": "Member Details",
-  "address": "Address",
-  "passwordRequired": "Password is required",
-  "incorrectPassword": "Incorrect password",
-  "accept": "Accept",
-  "password": "Password"
+	"welcome": "Welcome to the German Club of Puerto Montt",
+	"start": "Start",
+	"interact": "Touch to interact",
+	"backToInteract": "Back to start",
+	"directors": "Directors",
+	"members": "Members",
+	"gallery": "Gallery",
+	"history": "History",
+	"name": "Name",
+	"role": "Role",
+	"email": "Email",
+	"phone": "Phone",
+	"clearFilter": "Clear Filter",
+	"roles": {
+		"president": "President",
+		"vice_president": "Vice President",
+		"secretary": "Secretary",
+		"treasurer": "Treasurer",
+		"board_member": "Board Member",
+		"honor_advisor": "Honor Advisor",
+		"honor_member": "Honor Member",
+		"member": "Member"
+	},
+	"fullscreen": "Fullscreen",
+	"historyEvents": {
+		"clubFounded": {
+			"title": "Club Founded",
+			"description": "The German Club of Puerto Montt was founded in 1860."
+		},
+		"firstClubhouse": {
+			"title": "First Clubhouse",
+			"description": "The first clubhouse was built in 1900."
+		},
+		"majorExpansion": {
+			"title": "Major Expansion",
+			"description": "The facility was expanded in 1950."
+		},
+		"modernization": {
+			"title": "Modernization",
+			"description": "The facility was modernized in 2000."
+		},
+		"presentDay": {
+			"title": "Present Day",
+			"description": "The German Club of Puerto Montt is today an important meeting place for Germans in Chile."
+		}
+	},
+	"joinDate": "Join Date",
+	"actions": "Actions",
+	"viewDetails": "View Details",
+	"enterPassword": "Enter password",
+	"unlock": "Unlock",
+	"cancel": "Cancel",
+	"memberDetails": "Member Details",
+	"address": "Address",
+	"passwordRequired": "Password is required",
+	"incorrectPassword": "Incorrect password",
+	"accept": "Accept",
+	"password": "Password",
+	"noImagesFound": "No images found",
+	"noEventsFound": "No events found"
 }

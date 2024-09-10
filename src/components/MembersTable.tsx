@@ -32,6 +32,7 @@ import {
 } from '@/components/ui/form';
 import { Member } from '@/db/schema';
 import VirtualKeyboard from './VirtualKeyboard';
+import { Badge } from '@/components/ui/badge';
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const ITEMS_PER_PAGE = 6;
@@ -53,14 +54,14 @@ const MembersTable: React.FC<MembersTableProps> = ({ members }) => {
 	const [password, setPassword] = useState('');
 
 	const handleKeyPress = (key: string) => {
-		setPassword(prev => prev + key);
+		setPassword((prev) => prev + key);
 		form.setValue('password', password + key);
 	};
 
 	const handleBackspace = () => {
-		setPassword(prev => prev.slice(0, -1));
+		setPassword((prev) => prev.slice(0, -1));
 		form.setValue('password', password.slice(0, -1));
-  };
+	};
 
 	const handleClear = () => {
 		setPassword('');
@@ -106,7 +107,7 @@ const MembersTable: React.FC<MembersTableProps> = ({ members }) => {
 		setSelectedMember(member);
 		setIsDialogOpen(true);
 		setIsUnlocked(false);
-		setPassword('')
+		setPassword('');
 		form.reset();
 	};
 
@@ -148,7 +149,9 @@ const MembersTable: React.FC<MembersTableProps> = ({ members }) => {
 										: '\u00A0'}
 								</TableCell>
 								<TableCell>
-									{member ? t(`roles.${member.role}`) : '\u00A0'}
+									<Badge variant={'outline'}>
+										{member ? t(`roles.${member.role}`) : '\u00A0'}
+									</Badge>
 								</TableCell>
 								<TableCell>
 									{member ? (
@@ -286,9 +289,9 @@ const MembersTable: React.FC<MembersTableProps> = ({ members }) => {
 									} ${selectedMember?.lastName} ${
 										selectedMember?.secondSurname || ''
 									}`}</h3>
-									<p className='text-sm text-gray-500'>
+									<Badge className='text-sm text-gray-500'>
 										{t(`roles.${selectedMember?.role}`)}
-									</p>
+									</Badge>
 								</div>
 							</div>
 							<div className='grid grid-cols-2 gap-4'>

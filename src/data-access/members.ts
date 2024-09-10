@@ -1,19 +1,27 @@
-import { membersList } from '@/data/members';
+import { Member } from '@/db/schema';
 
-export const members = {
+const API_URL = import.meta.env.VITE_DASHBOARD_URL || 'http://localhost:3000';
+
+interface MembersAPI {
+	getAll: () => Promise<Member[]>;
+	getMembers: () => Promise<Member[]>;
+	getDirectors: () => Promise<Member[]>;
+}
+
+export const members: MembersAPI = {
 	getAll: async () => {
-		// Simulating an API call with a delay
-		await new Promise((resolve) => setTimeout(resolve, 500));
-		return membersList;
+		const response = await fetch(`${API_URL}/api/members`);
+		if (!response.ok) {
+			throw new Error('Failed to fetch members');
+		}
+		return response.json();
 	},
 	getMembers: async () => {
-		// Simulating an API call with a delay
-		await new Promise((resolve) => setTimeout(resolve, 500));
-		return membersList.filter((member) => member.role === 'member');
+		const allMembers = await members.getAll();
+		return allMembers.filter((member) => member.role === 'member');
 	},
 	getDirectors: async () => {
-		// Simulating an API call with a delay
-		await new Promise((resolve) => setTimeout(resolve, 500));
-		return membersList.filter((member) => member.role !== 'member');
+		const allMembers = await members.getAll();
+		return allMembers.filter((member) => member.role !== 'member');
 	},
 };

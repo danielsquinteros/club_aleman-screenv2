@@ -24,12 +24,16 @@ export type Member = {
 };
 
 export interface HistoryEvent {
+	id: number;
 	year: number;
 	event: string;
+	description: string | null;
 }
 
 export interface GalleryImage {
 	id: string;
+	description: string | null;
 	url: string;
 	title: string;
+	uploadedAt: string;
 }

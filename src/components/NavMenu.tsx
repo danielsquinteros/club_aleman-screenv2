@@ -52,10 +52,10 @@ const NavMenu = () => {
 		},
 		{
 			backgroundColor: 'orange',
-			// icon: '/images/icons/circle_white.svg',
-			// key: 'history',
-			// color: 'text-white',
-			// to: '/history',
+			icon: '/images/icons/circle_white.svg',
+			key: 'history',
+			color: 'text-white',
+			to: '/history',
 		},
 		{
 			backgroundColor: 'red',

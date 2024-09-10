@@ -1,60 +1,62 @@
 {
-  "welcome": "Bienvenido al Club Alemán de Puerto Montt",
-  "start": "Inicio",
-  "interact": "Toca para interactuar",
-  "backToInteract": "Volver al inicio",
-  "directors": "Directiva",
-  "members": "Socios",
-  "gallery": "Galería",
-  "history": "Historia",
-  "name": "Nombre",
-  "role": "Cargo",
-  "email": "Correo electrónico",
-  "phone": "Teléfono",
-  "clearFilter": "Limpiar Filtro",
-  "roles": {
-    "president": "Presidente",
-    "vice_president": "Vicepresidente",
-    "secretary": "Secretario",
-    "treasurer": "Tesorero",
-    "board_member": "Miembro de la Junta",
-    "honor_advisor": "Asesor de Honor",
-    "honor_member": "Miembro de Honor",
-    "member": "Socio"
-  },
-  "fullscreen": "Pantalla Completa",
-  "historyEvents": {
-    "clubFounded": {
-      "title": "Fundación del Club",
-      "description": "El Club Alemán de Puerto Montt fue fundado en 1860."
-    },
-    "firstClubhouse": {
-      "title": "Primer Clubhouse",
-      "description": "El primer clubhouse fue construido en 1900."
-    },
-    "majorExpansion": {
-      "title": "Gran Expansión",
-      "description": "La instalación fue expandida en 1950."
-    },
-    "modernization": {
-      "title": "Modernización",
-      "description": "La instalación fue modernizada en 2000."
-    },
-    "presentDay": {
-      "title": "Día de Hoy",
-      "description": "El Club Alemán de Puerto Montt es hoy un importante lugar de reunión para alemanes en Chile."
-    }
-  },
-  "joinDate": "Fecha de ingreso",
-  "actions": "Acciones",
-  "viewDetails": "Ver detalles",
-  "enterPassword": "Ingrese la contraseña",
-  "unlock": "Desbloquear",
-  "cancel": "Cancelar",
-  "memberDetails": "Detalles del miembro",
-  "address": "Dirección",
-  "passwordRequired": "La contraseña es requerida",
-  "incorrectPassword": "Contraseña incorrecta",
-  "accept": "Aceptar",
-  "password": "Contraseña"
+	"welcome": "Bienvenido al Club Alemán de Puerto Montt",
+	"start": "Inicio",
+	"interact": "Toca para interactuar",
+	"backToInteract": "Volver al inicio",
+	"directors": "Directiva",
+	"members": "Socios",
+	"gallery": "Galería",
+	"history": "Historia",
+	"name": "Nombre",
+	"role": "Cargo",
+	"email": "Correo electrónico",
+	"phone": "Teléfono",
+	"clearFilter": "Limpiar Filtro",
+	"roles": {
+		"president": "Presidente",
+		"vice_president": "Vicepresidente",
+		"secretary": "Secretario",
+		"treasurer": "Tesorero",
+		"board_member": "Miembro de la Junta",
+		"honor_advisor": "Asesor de Honor",
+		"honor_member": "Miembro de Honor",
+		"member": "Socio"
+	},
+	"fullscreen": "Pantalla Completa",
+	"historyEvents": {
+		"clubFounded": {
+			"title": "Fundación del Club",
+			"description": "El Club Alemán de Puerto Montt fue fundado en 1860."
+		},
+		"firstClubhouse": {
+			"title": "Primer Clubhouse",
+			"description": "El primer clubhouse fue construido en 1900."
+		},
+		"majorExpansion": {
+			"title": "Gran Expansión",
+			"description": "La instalación fue expandida en 1950."
+		},
+		"modernization": {
+			"title": "Modernización",
+			"description": "La instalación fue modernizada en 2000."
+		},
+		"presentDay": {
+			"title": "Día de Hoy",
+			"description": "El Club Alemán de Puerto Montt es hoy un importante lugar de reunión para alemanes en Chile."
+		}
+	},
+	"joinDate": "Fecha de ingreso",
+	"actions": "Acciones",
+	"viewDetails": "Ver detalles",
+	"enterPassword": "Ingrese la contraseña",
+	"unlock": "Desbloquear",
+	"cancel": "Cancelar",
+	"memberDetails": "Detalles del miembro",
+	"address": "Dirección",
+	"passwordRequired": "La contraseña es requerida",
+	"incorrectPassword": "Contraseña incorrecta",
+	"accept": "Aceptar",
+	"password": "Contraseña",
+	"noImagesFound": "No se encontraron imágenes",
+	"noEventsFound": "No se encontraron eventos"
 }

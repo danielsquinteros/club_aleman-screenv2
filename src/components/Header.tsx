@@ -1,16 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { format } from 'date-fns';
 import { useTranslation } from 'react-i18next';
 import { getDateLocale } from '../utils/dateUtils';
 import { Link, useLocation } from 'react-router-dom';
 import LanguageSelector from './LanguageSelector';
+import { Button } from './ui/button';
+import { RefreshCcw } from 'lucide-react';
+import { DateDisplay, DateSkeleton } from './DateDisplay';
 
 const Header = () => {
 	const [isFullscreen, setIsFullscreen] = useState(false);
 	const [startingTexts, setStartingTexts] = useState({
 		text: 'start',
-		button: 'interact'
-	})
+		button: 'interact',
+	});
 	const { pathname } = useLocation();
 	const { i18n, t } = useTranslation();
 	const dateLocale = getDateLocale(i18n.language);
@@ -18,60 +21,57 @@ const Header = () => {
 	// Watch for fullscreenchange
 	useEffect(() => {
 		function onFullscreenChange() {
-		setIsFullscreen(Boolean(document.fullscreenElement));
+			setIsFullscreen(Boolean(document.fullscreenElement));
 		}
 
-		document.addEventListener("fullscreenchange", onFullscreenChange);
+		document.addEventListener('fullscreenchange', onFullscreenChange);
 
 		return () =>
-		document.removeEventListener("fullscreenchange", onFullscreenChange);
+			document.removeEventListener('fullscreenchange', onFullscreenChange);
 	}, []);
 
 	const handleFullScreen = () => {
 		if (isFullscreen) {
-		document.exitFullscreen();
+			document.exitFullscreen();
 		} else {
-		document.documentElement.requestFullscreen();
+			document.documentElement.requestFullscreen();
 		}
 	};
 
 	useEffect(() => {
-		if(pathname === '/members'){
+		if (pathname === '/members') {
 			setStartingTexts({
 				text: 'members',
-				button: 'backToInteract'
-			})
-			return
+				button: 'backToInteract',
+			});
+			return;
 		}
-		if(pathname === '/gallery'){
+		if (pathname === '/gallery') {
 			setStartingTexts({
 				text: 'gallery',
-				button: 'backToInteract'
-			})
-			return
+				button: 'backToInteract',
+			});
+			return;
 		}
-		if(pathname === '/history'){
+		if (pathname === '/history') {
 			setStartingTexts({
 				text: 'history',
-				button: 'backToInteract'
-			})
-			return
+				button: 'backToInteract',
+			});
+			return;
 		}
-		if(pathname === '/directors'){
+		if (pathname === '/directors') {
 			setStartingTexts({
 				text: 'directors',
-				button: 'backToInteract'
-			})
-			return
+				button: 'backToInteract',
+			});
+			return;
 		}
 		setStartingTexts({
 			text: 'start',
-			button: 'interact'
-		})
-
-
-	}, [pathname])
-	
+			button: 'interact',
+		});
+	}, [pathname]);
 
 	return (
 		<header className='flex flex-col h-full justify-between items-center'>
@@ -84,29 +84,32 @@ const Header = () => {
 				/>
 			</div>
 			<div>
-				<h1 className='text-4xl text-center font-bold mb-10'>{t(`${startingTexts.text}`)}</h1>
+				<h1 className='text-4xl text-center font-bold mb-10'>
+					{t(`${startingTexts.text}`)}
+				</h1>
 				<Link to='/'>
 					<button className='bg-black py-4 px-9 flex items-center rounded-xl'>
 						<img
 							src='/images/icons/circle_arrow.svg'
 							alt='Círculo flecha'
 							className='w-6 h-auto mr-4'
-							style={{rotate: (`${startingTexts.text === 'start' ? '0deg' : '180deg'}`)}}
+							style={{
+								rotate: `${startingTexts.text === 'start' ? '0deg' : '180deg'}`,
+							}}
 						/>
-						<p className='text-white text-xl'>
-							{t(`${startingTexts.button}`)}
-						</p>
+						<p className='text-white text-xl'>{t(`${startingTexts.button}`)}</p>
 					</button>
 				</Link>
 			</div>
 			<LanguageSelector />
-			<div className='text-center'>
-				<h2 className='text-3xl font-bold first-letter:uppercase'>
-					{format(new Date(), 'EEEE dd', { locale: dateLocale })}
-				</h2>
-				<p className='text-xl first-letter:uppercase'>
-					{format(new Date(), 'MMMM yyyy', { locale: dateLocale })}
-				</p>
+			<div className='flex flex-col gap-2 items-center'>
+				{/* add a button to refresh the page */}
+				<Button onClick={() => window.location.reload()} className='w-fit'>
+					<RefreshCcw className='w-6 h-auto' />
+				</Button>
+				{/* <Suspense fallback={<DateSkeleton />}> */}
+				<DateDisplay />
+				{/* </Suspense> */}
 			</div>
 		</header>
 	);

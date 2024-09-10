@@ -11,7 +11,7 @@ export function HistorySkeleton() {
 					<div className='flex-grow'>
 						<div className='bg-gray-200 p-6 rounded-lg shadow-md'>
 							<Skeleton className='h-8 w-3/4 mb-2' /> {/* Event title */}
-							<Skeleton className='h-20 w-full' /> {/* Event description */}
+							<Skeleton className='h-10 w-full' /> {/* Event description */}
 						</div>
 					</div>
 				</div>

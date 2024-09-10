@@ -6,6 +6,7 @@ import { Maximize2 } from 'lucide-react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { GalleryImage } from '@/db/schema';
+import { AlertTriangle } from 'lucide-react';
 
 interface GalleryComponentProps {
 	images: GalleryImage[];
@@ -20,7 +21,7 @@ const GalleryComponent: React.FC<GalleryComponentProps> = ({ images }) => {
 
 	const mainSettings = {
 		dots: false,
-		infinite: true,
+		infinite: images.length > 3,
 		speed: 500,
 		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -31,9 +32,9 @@ const GalleryComponent: React.FC<GalleryComponentProps> = ({ images }) => {
 
 	const thumbnailSettings = {
 		dots: false,
-		infinite: true,
+		infinite: images.length > 3,
 		speed: 500,
-		slidesToShow: 5,
+		slidesToShow: images.length > 5 ? 5 : images.length,
 		slidesToScroll: 1,
 		focusOnSelect: true,
 		centerMode: true,
@@ -47,6 +48,27 @@ const GalleryComponent: React.FC<GalleryComponentProps> = ({ images }) => {
 	const closeFullscreen = () => {
 		setFullscreenImage(null);
 	};
+
+	if (images.length === 0) {
+		return (
+			<div className='text-center text-gray-500 text-3xl font-bold flex items-center justify-center gap-4 h-full'>
+				<AlertTriangle className='w-10 h-10' />
+				<span>{t('noImagesFound')}</span>
+			</div>
+		);
+	}
+
+	// if (images.length === 1) {
+	// 	return (
+	// 		<div className='max-w-4xl mx-auto'>
+	// 			<img
+	// 				src={images[0].url}
+	// 				alt={images[0].title}
+	// 				className='w-full h-full object-cover'
+	// 			/>
+	// 		</div>
+	// 	);
+	// }
 
 	return (
 		<div className='max-w-4xl mx-auto'>
