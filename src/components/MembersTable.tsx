@@ -289,7 +289,7 @@ const MembersTable: React.FC<MembersTableProps> = ({ members }) => {
 									} ${selectedMember?.lastName} ${
 										selectedMember?.secondSurname || ''
 									}`}</h3>
-									<Badge className='text-sm text-gray-500'>
+									<Badge className='text-sm text-gray-500' variant={'outline'}>
 										{t(`roles.${selectedMember?.role}`)}
 									</Badge>
 								</div>
