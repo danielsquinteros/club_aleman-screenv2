@@ -47,7 +47,7 @@ const Layout: React.FC = () => {
   }, [isIdle, resetTimer]);
 
   useEffect(() => {
-    const fetchDirectors = async () => {
+    const fetchMediaItems = async () => {
 			try {
 				const data = await mediaItems.getAll();
 				setImages(data);
@@ -56,7 +56,7 @@ const Layout: React.FC = () => {
 			}
 		};
 
-		fetchDirectors();
+		fetchMediaItems();
 
   }, []);
 
