@@ -50,7 +50,6 @@ const Layout: React.FC = () => {
     const fetchDirectors = async () => {
 			try {
 				const data = await mediaItems.getAll();
-        console.log('--->', data);
 				setImages(data);
 			} catch (err) {
 				console.error(err)
