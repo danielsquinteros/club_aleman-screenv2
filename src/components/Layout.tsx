@@ -2,30 +2,27 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import ImageCarousel from './ImageCarousel';
+import { mediaItems } from '@/data-access/media';
+import { MediaItems } from '@/db/schema';
 
 const IDLE_TIMEOUT = 60000; // 60 seconds
 const BUTTON_HIDE_TIMEOUT = 5000; // 5 seconds
 
-interface Image {
-  src: string;
-  alt: string;
-}
 
 const Layout: React.FC = () => {
   const [isIdle, setIsIdle] = useState<boolean>(false);
   const [isButtonVisible, setIsButtonVisible] = useState<boolean>(false);
   const [lastActiveTime, setLastActiveTime] = useState<number>(Date.now());
   const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const [images, setImages] = useState <MediaItems[]>([{
+      id: '1',
+      title: 'Inicio',
+      url: "/images/screen-saver/image-1.png",
+      description: "Screen saver image 1",
+      type: "general",
+      uploadedAt: "2024-09-10T22:54:09.369Z"
+  }])
 
-  const images: Image[] = [
-    { src: "/images/screen-saver/image-1.jpg", alt: "Screen saver image 1" },
-    { src: "/images/screen-saver/image-2.jpg", alt: "Screen saver image 2" },
-    { src: "/images/screen-saver/image-3.jpg", alt: "Screen saver image 3" },
-    { src: "/images/screen-saver/image-4.png", alt: "Screen saver image 4" },
-    { src: "/images/screen-saver/image-5.png", alt: "Screen saver image 5" },
-    { src: "/images/screen-saver/image-6.png", alt: "Screen saver image 6" },
-    { src: "/images/screen-saver/image-7.png", alt: "Screen saver image 7" }
-  ];
 
   const resetTimer = useCallback((): void => {
     setLastActiveTime(Date.now());
@@ -48,6 +45,20 @@ const Layout: React.FC = () => {
       resetTimer();
     }
   }, [isIdle, resetTimer]);
+
+  useEffect(() => {
+    const fetchMediaItems = async () => {
+			try {
+				const data = await mediaItems.getAll();
+				setImages(data);
+			} catch (err) {
+				console.error(err)
+			}
+		};
+
+		fetchMediaItems();
+
+  }, []);
 
   useEffect(() => {
     const checkIdleTime = setInterval(() => {
