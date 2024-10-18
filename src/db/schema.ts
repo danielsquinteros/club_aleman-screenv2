@@ -37,3 +37,11 @@ export interface GalleryImage {
 	title: string;
 	uploadedAt: string;
 }
+export interface MediaItems {
+	id: string;
+	title: string;
+	url: string;
+	description: string | null;
+	type: string | null;
+	uploadedAt: string;
+}

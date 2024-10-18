@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion"; // Opción para usar animaciones suaves
+import { MediaItems } from '@/db/schema';
 
-const ImageCarousel = ({ images, interval = 5000 }: { images: {src: string, alt: string}[], interval? :number}) => {
+const ImageCarousel = ({ images, interval = 5000 }: { images: MediaItems[], interval? :number}) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -16,11 +17,11 @@ const ImageCarousel = ({ images, interval = 5000 }: { images: {src: string, alt:
 
   return (
     <div style={{ width: "100%", height: "100vh", overflow: "hidden"}}>
-      {images.map(({src, alt}, index) => (
+      {images.map(({url, description}, index) => (
         <motion.img
           key={index}
-          src={src}
-          alt={alt}
+          src={url}
+          alt={description || 'description'}
           style={{
             position: "absolute",
             width: "100%",
