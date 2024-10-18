@@ -17,7 +17,7 @@ const Layout: React.FC = () => {
   const [images, setImages] = useState <MediaItems[]>([{
       id: '1',
       title: 'Inicio',
-      url: "/images/screen-saver/image-1.jpg",
+      url: "/images/screen-saver/image-1.png",
       description: "Screen saver image 1",
       type: "general",
       uploadedAt: "2024-09-10T22:54:09.369Z"
