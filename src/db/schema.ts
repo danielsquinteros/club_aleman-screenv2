@@ -45,3 +45,9 @@ export interface MediaItems {
 	type: string | null;
 	uploadedAt: string;
 }
+
+export interface ClubHistory {
+	id: number;
+	content: string;
+	updatedAt: string;
+}

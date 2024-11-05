@@ -2,20 +2,25 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 export function HistorySkeleton() {
 	return (
-		<div className='max-w-4xl mx-auto px-4 space-y-12'>
-			{Array.from({ length: 5 }).map((_, i) => (
-				<div key={i} className='flex items-center'>
-					<div className='flex-shrink-0 w-24 text-2xl font-bold text-right mr-8'>
-						<Skeleton className='h-8 w-full' /> {/* Year */}
-					</div>
-					<div className='flex-grow'>
-						<div className='bg-gray-200 p-6 rounded-lg shadow-md'>
-							<Skeleton className='h-8 w-3/4 mb-2' /> {/* Event title */}
-							<Skeleton className='h-10 w-full' /> {/* Event description */}
-						</div>
-					</div>
-				</div>
-			))}
+		<div className='max-w-4xl mx-auto space-y-6'>
+			<Skeleton className='h-12 w-3/4 mx-auto' />
+			<div className='space-y-4'>
+				<Skeleton className='h-4 w-full' />
+				<Skeleton className='h-4 w-[90%]' />
+				<Skeleton className='h-4 w-[85%]' />
+			</div>
+			<div className='space-y-4'>
+				<Skeleton className='h-8 w-2/3' />
+				<Skeleton className='h-4 w-full' />
+				<Skeleton className='h-4 w-[92%]' />
+				<Skeleton className='h-4 w-[88%]' />
+			</div>
+			<div className='space-y-4'>
+				<Skeleton className='h-8 w-2/3' />
+				<Skeleton className='h-4 w-full' />
+				<Skeleton className='h-4 w-[95%]' />
+				<Skeleton className='h-4 w-[85%]' />
+			</div>
 		</div>
 	);
 }
